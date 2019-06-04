@@ -76,6 +76,26 @@ static unsigned long partition(unsigned long *v, unsigned long low, unsigned lon
   return i+1;
 }
 
+static void mistosort(unsigned long *v, unsigned long *w, unsigned long i, unsigned long f, unsigned long parte) {
+  if (i >= f)
+    return;
+
+  if ((f - i) < parte) {
+    quicksort(v, i, f);
+    return;
+  }
+  unsigned long m = (i + f) / 2;
+
+  mistosort(v, w, i, m, parte);
+  mistosort(v, w, m+1, f, parte);
+
+  if (v[m] <= v[m+1])
+    // então v[i...f] já está ordenado
+    return;
+
+  merge(v, w, i, m, f);
+}
+
 void quicksort(unsigned long *v, unsigned long low, unsigned long high) {
   if (low < high) {
     // pi particiona o vetor, v[pi] está no lugar certo
@@ -84,4 +104,10 @@ void quicksort(unsigned long *v, unsigned long low, unsigned long high) {
     quicksort(v, low, pi-1);
     quicksort(v, pi+1, high);
   }
+}
+
+void misto(unsigned long *v, unsigned long n, int p) {
+  unsigned long *w = malloc(sizeof(*w) * n);
+  mistosort(v, w, 0, n-1, n/p);
+  free(w);
 }
