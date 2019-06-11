@@ -108,6 +108,16 @@ void quicksort(unsigned long *v, unsigned long low, unsigned long high) {
 
 void misto(unsigned long *v, unsigned long n, int p) {
   unsigned long *w = malloc(sizeof(*w) * n);
-  mistosort(v, w, 0, n-1, n/p);
+  mistosort(v, w, 0, n-1, n/(unsigned long)p);
   free(w);
+}
+
+int testa(unsigned long *v, unsigned long n) {
+  // retorna 0 se vetor v está ordenado
+  for (unsigned long i = 1; i < n; i++) {
+    if (v[i-1] > v[i]) {
+      return 1;
+    }
+  }
+  return 0;
 }

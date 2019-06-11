@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "sorting.h"
 
-int main() {
+int main(void) {
 
   FILE *f = stdin;
   unsigned long n = 0;
@@ -16,10 +16,17 @@ int main() {
   int p = 8;
   misto(v, n, p);
 
+  /*
   for (unsigned long i = 0; i < n; i++) {
     printf("%lu ", v[i]);
   }
   printf("\n");
+  */
+
+  if (testa(v, n))
+    printf("erro...\n");
+  else
+    printf("vetor ordenado!\n");
 
   free(v);
 

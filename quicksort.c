@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "sorting.h"
 
-int main() {
+int main(void) {
 
   FILE *f = stdin;
   unsigned long n = 0;
