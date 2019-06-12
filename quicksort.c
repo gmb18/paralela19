@@ -15,10 +15,21 @@ int main(void) {
 
   quicksort(v, 0, n-1);
 
+  /*
   for (unsigned long i = 0; i < n; i++) {
     printf("%lu ", v[i]);
   }
   printf("\n");
+  */
+  
+  if (testa(v, n)) {
+    printf("erro...\n");
+    for (unsigned long i = 0; i < n; i++) {
+      printf("%lu ", v[i]);
+    }
+    printf("\n");
+  } else
+    printf("vetor ordenado!\n");
 
   free(v);
 

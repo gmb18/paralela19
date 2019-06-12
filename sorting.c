@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "sorting.h"
 
-static void merge(unsigned long *v, unsigned long *w, unsigned long i, unsigned long  m, unsigned long f) {
+void merge(unsigned long *v, unsigned long *w, unsigned long i, unsigned long  m, unsigned long f) {
   // dado vetor v, sendo v[i..m] e  v[m+1..f] já ordenados, coloca os 
   // elementos dos dois ordenadamente em v[i..f]
   unsigned long z; 
@@ -64,6 +64,7 @@ static unsigned long partition(unsigned long *v, unsigned long low, unsigned lon
   // pega último valor como pivô, coloca ele no lugar certo e os outros também
   unsigned long pivot = v[high];
   unsigned long i = low - 1; // index do menor elemento
+  //unsigned long i = low > 0 ? low - 1 : 0;
 
   for (unsigned long j = low; j <= high-1; j++) {
     if (v[j] <= pivot) {
@@ -101,7 +102,7 @@ void quicksort(unsigned long *v, unsigned long low, unsigned long high) {
     // pi particiona o vetor, v[pi] está no lugar certo
     unsigned long pi = partition(v, low, high);
     // agora ordena elementos antes e depois da partição
-    quicksort(v, low, pi-1);
+    quicksort(v, low, pi ? pi-1 : 0);
     quicksort(v, pi+1, high);
   }
 }

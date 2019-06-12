@@ -31,7 +31,6 @@ CFLAGS  = -std=c99 \
 	  -Wstrict-aliasing=2 \
 	  -Wstrict-prototypes \
 	  -Wundef \
-	  -Wunsafe-loop-optimizations \
 	  -Wvolatile-register-var \
 	  -Wwrite-strings
 
@@ -39,15 +38,26 @@ CFLAGS  = -std=c99 \
 .PHONY : all clean
 
 #------------------------------------------------------------------------------
+all: misto quicksort mergesort parallel1
+
 misto : misto.o sorting.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-quicksort : misto.o sorting.o
+quicksort : quicksort.o sorting.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-mergesort : misto.o sorting.o
+mergesort : mergesort.o sorting.o
 	$(CC) $(CFLAGS) -o $@ $^
+
+sorting.o: sorting.c sorting.h
+	$(CC) -c $(CFLAGS) -O3 sorting.c -o sorting.o
+
+stdquicksort : stdquicksort.o
+	$(CC) $(CFLAGS) -o $@ $^
+
+parallel1 : parallel1.c sorting.o
+	$(CC) $(CFLAGS) -o $@ $^ -fopenmp -O3
 
 #------------------------------------------------------------------------------
 clean :
-	$(RM) *.o misto quicksort mergesort
+	$(RM) *.o misto quicksort mergesort stdquicksort parallel1

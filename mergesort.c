@@ -15,10 +15,17 @@ int main(void) {
 
   mergesort(v, n);
 
+  /*
   for (unsigned long i = 0; i < n; i++) {
     printf("%lu ", v[i]);
   }
   printf("\n");
+  */
+
+  if (testa(v, n))
+    printf("erro...\n");
+  else
+    printf("vetor ordenado!\n");
 
   free(v);
 
