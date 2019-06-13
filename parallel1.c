@@ -9,7 +9,7 @@ static void paramistosort(unsigned long *v, unsigned long *w, unsigned long i, u
 
   if ((f - i) < parte) {
 //#pragma omp task
-    printf("        thread %d passando pro quicksort\n", omp_get_thread_num());
+    //printf("        thread %d passando pro quicksort\n", omp_get_thread_num());
     quicksort(v, i, f);
     return;
   }
@@ -25,14 +25,14 @@ static void paramistosort(unsigned long *v, unsigned long *w, unsigned long i, u
     // então v[i...f] já está ordenado
     return;
 
-  printf("    thread %d passando pro merge\n", omp_get_thread_num());
+  //printf("    thread %d passando pro merge\n", omp_get_thread_num());
   merge(v, w, i, m, f);
 }
 
 static void paramisto(unsigned long *v, unsigned long n) {
   unsigned long *w = malloc(sizeof(*w) * n);
   //printf("começando parallel mergesort misto\n");
-#pragma omp parallel
+#pragma omp parallel num_threads(8)
 #pragma omp single
   {
   int p = omp_get_num_threads();
