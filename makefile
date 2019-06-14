@@ -1,7 +1,5 @@
 CFLAGS  = -std=c99 \
-					-g \
 	  -pipe \
-	  -ggdb3 -Wstrict-overflow=5 -fstack-protector-all \
           -W -Wall -Wextra \
 	  -Wbad-function-cast \
 	  -Wcast-align \
@@ -29,7 +27,6 @@ CFLAGS  = -std=c99 \
 	  -Wshadow \
 	  -Wsign-compare \
 	  -Wstack-protector \
-	  -Wstrict-aliasing=2 \
 	  -Wstrict-prototypes \
 	  -Wundef \
 	  -Wvolatile-register-var \
@@ -58,6 +55,9 @@ stdquicksort : stdquicksort.o
 
 parallel1 : parallel1.c sorting.o
 	$(CC) $(CFLAGS) -o $@ $^ -fopenmp -O3
+
+mpi : mpi.c
+	mpicc $(CFLAGS) mpi.c -o mpi -O3
 
 #------------------------------------------------------------------------------
 clean :
