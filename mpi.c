@@ -165,7 +165,6 @@ int main(int argc, char **argv) {
 
     start = MPI_Wtime();
     paramerge(v, tamanho, alturaRaiz);
-    finnish = MPI_Wtime();
   } else { 
     //outros nós
     long iV[2], //mensagem a ser passada, [0] = tamanho e [1] = altura
@@ -182,12 +181,13 @@ int main(int argc, char **argv) {
     return 0;
   }
 
+  MPI_Finalize();
+  finnish = MPI_Wtime();
   if (!testa(v, tamanho)) {
     printf("Vetor de tamanho %lu ordenado em %3.3f usando %d processos\n", tamanho, finnish - start, nProcessos);
   }else{
     printf("erro...\n");
   }
-  MPI_Finalize();
 
   return 0;
 }

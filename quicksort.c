@@ -22,6 +22,7 @@ int main(void) {
   printf("\n");
   */
   
+  /*
   if (testa(v, n)) {
     printf("erro...\n");
     for (unsigned long i = 0; i < n; i++) {
@@ -30,6 +31,7 @@ int main(void) {
     printf("\n");
   } else
     printf("vetor ordenado!\n");
+    */
 
   free(v);
 

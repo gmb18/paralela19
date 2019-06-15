@@ -81,7 +81,7 @@ static void mistosort(unsigned long *v, unsigned long *w, unsigned long i, unsig
   if (i >= f)
     return;
 
-  if ((f - i) < parte) {
+  if ((f - i) <= parte) {
     quicksort(v, i, f);
     return;
   }
