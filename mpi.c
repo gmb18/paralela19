@@ -135,6 +135,7 @@ int main(int argc, char **argv) {
   int rc;
   long *v, tamanho;
   double start, finnish;
+  clock_t t1 = 0;;
 
   rc = MPI_Init(&argc, &argv);
   if (rc < 0) {
@@ -164,6 +165,7 @@ int main(int argc, char **argv) {
     }
 
     start = MPI_Wtime();
+    t1 = clock();
     paramerge(v, tamanho, alturaRaiz);
   } else { 
     //outros nós
@@ -183,11 +185,14 @@ int main(int argc, char **argv) {
 
   MPI_Finalize();
   finnish = MPI_Wtime();
-  if (!testa(v, tamanho)) {
-    printf("Vetor de tamanho %lu ordenado em %3.3f usando %d processos\n", tamanho, finnish - start, nProcessos);
-  }else{
-    printf("erro...\n");
-  }
+  //if (!testa(v, tamanho)) {
+    //printf("Vetor de tamanho %lu ordenado em %3.3f usando %d processos\n", tamanho, finnish - start, nProcessos);
+  //}else{
+    //printf("erro...\n");
+  //}
+  clock_t t2 = clock();
+  double time_taken = (double)(t2 - t1) / CLOCKS_PER_SEC;
+  printf("Vetor de tamanho %lu ordenado em %3.3f\n", tamanho, time_taken);
 
   return 0;
 }

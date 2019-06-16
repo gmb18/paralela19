@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "sorting.h"
 
 int main(void) {
@@ -13,7 +14,11 @@ int main(void) {
     fscanf(f, "%lu", &v[i]);
   }
 
+  clock_t t1 = clock();
   quicksort(v, 0, n-1);
+  clock_t t2 = clock();
+  double time_taken = (double)(t2 - t1) / CLOCKS_PER_SEC;
+  printf("Vetor de tamanho %lu ordenado em %3.3f\n", n, time_taken);
 
   /*
   for (unsigned long i = 0; i < n; i++) {

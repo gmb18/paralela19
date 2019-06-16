@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <omp.h>
 #include "sorting.h"
 
 static void paramistosort(unsigned long *v, unsigned long *w, unsigned long i, unsigned long f, unsigned long parte) {
-  printf("  paramisto sort thread %d i: %lu, f: %lu\n", omp_get_thread_num(), i, f);
+  //printf("  paramisto sort thread %d i: %lu, f: %lu\n", omp_get_thread_num(), i, f);
   if (i >= f)
     return;
 
   if ((f - i) <= parte) {
 //#pragma omp task
-    printf("        thread %d passando pro quicksort\n", omp_get_thread_num());
+    ////printf("        thread %d passando pro quicksort\n", omp_get_thread_num());
     quicksort(v, i, f);
     return;
   }
@@ -26,7 +27,7 @@ static void paramistosort(unsigned long *v, unsigned long *w, unsigned long i, u
     // então v[i...f] já está ordenado
     //return;
 
-  printf("    thread %d passando pro merge\n", omp_get_thread_num());
+  //printf("    thread %d passando pro merge\n", omp_get_thread_num());
   merge(v, w, i, m, f);
 }
 
@@ -59,6 +60,7 @@ int main(int argc, char **argv) {
 
   if (argc == 2) 
     omp_set_num_threads(atoi(argv[1]));
+  clock_t t1 = clock();
   paramisto(v, n);
 
   /*
@@ -68,6 +70,7 @@ int main(int argc, char **argv) {
   printf("\n");
   */
 
+  /*
   if (testa(v, n)) {
     printf("erro...\n");
     for (unsigned long i = 0; i < n; i++) {
@@ -76,6 +79,10 @@ int main(int argc, char **argv) {
     printf("\n");
   } else
     printf("vetor ordenado!\n");
+    */
+  clock_t t2 = clock();
+  double time_taken = (double)(t2 - t1) / CLOCKS_PER_SEC;
+  printf("Vetor de tamanho %lu ordenado em %3.3f\n", n, time_taken);
 
   free(v);
 
