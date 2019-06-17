@@ -1,9 +1,10 @@
 #!/bin/bash
 #N=100000000 # N1 = cem milhões
-N=100000000
+N=50000000
 V=20
 N2=$(( $N + $N ))
 N4=$(( $N2 + $N2 ))
+Nmeio=$(( $N / $N ))
 
 echo "gerando entrada de tamanho $N..."
 ./gerador $N > N1a.txt
