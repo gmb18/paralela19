@@ -1,0 +1,72 @@
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+[gmb-desktop:13190] *** Process received signal ***
+[gmb-desktop:13190] Signal: Segmentation fault (11)
+[gmb-desktop:13190] Signal code: Address not mapped (1)
+[gmb-desktop:13190] Failing at address: 0x20
+[gmb-desktop:13190] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x3ef20)[0x7f8225ec5f20]
+[gmb-desktop:13190] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x18edd2)[0x7f8226015dd2]
+[gmb-desktop:13190] [ 2] mpi(+0x15fb)[0x5603ec8c95fb]
+[gmb-desktop:13190] [ 3] mpi(+0x1695)[0x5603ec8c9695]
+[gmb-desktop:13190] [ 4] mpi(+0xc3c)[0x5603ec8c8c3c]
+[gmb-desktop:13190] [ 5] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7)[0x7f8225ea8b97]
+[gmb-desktop:13190] [ 6] mpi(+0xdca)[0x5603ec8c8dca]
+[gmb-desktop:13190] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node gmb-desktop exited on signal 9 (Killed).
+--------------------------------------------------------------------------

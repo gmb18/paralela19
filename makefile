@@ -36,7 +36,7 @@ CFLAGS  = -std=c99 \
 .PHONY : all clean
 
 #------------------------------------------------------------------------------
-all: misto quicksort mergesort parallel1
+all: misto quicksort mergesort parallel1 mpi
 
 misto : misto.o sorting.o
 	$(CC) $(CFLAGS) -o $@ $^

@@ -192,7 +192,7 @@ int main(int argc, char **argv) {
   //}
   clock_t t2 = clock();
   double time_taken = (double)(t2 - t1) / CLOCKS_PER_SEC;
-  printf("Vetor de tamanho %lu ordenado em %3.3f\n", tamanho, time_taken);
+  printf("Vetor de tamanho %lu ordenado em %3.3f com %d processos (mpi)\n", tamanho, time_taken, nProcessos);
 
   return 0;
 }
